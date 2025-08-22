@@ -1,0 +1,190 @@
+/* MAIN * */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --backgroundLeft: #16182f;
+    --backgroundRight: #0a0d16;
+    --planeWhite: #fff;
+    --info: #b0b0b0;
+    --font: 'Roboto', sans-serif;
+    --loadingGreen: #66ff66;
+    --green: #4CAF50;
+    --green2: #2d7d33;
+    --blue: #4c59af;
+    --hoverBlue: #6e80f6;
+}
+
+/* MAIN2 */
+body {
+    font-family: var(--font);
+    background: linear-gradient(135deg, var(--backgroundLeft), var(--backgroundRight));
+    color: var(--planeWhite);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+.container {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
+    backdrop-filter: blur(10px);
+}
+.logo {
+    width: 200px;
+    margin-bottom: -20px;
+    margin-top: -20px;
+}
+p {
+    font-size: 18px;
+    margin-bottom: 25px;
+    color: var(--info);
+    opacity: 0.9;
+}
+.instructions {
+    font-size: 16px;
+    margin-top: 20px;
+    color: var(--info);
+    opacity: 0.9;
+    max-width: 80%;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+.instructions2 {
+    color: var(--planeWhite); 
+    text-decoration: underline;
+}
+input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid var(--blue);
+    background: #333;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+input:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 8px rgba(110, 128, 246, 0.8);
+    
+}
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    background: var(--blue);
+    color: var(--planeWhite);
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+button:hover {
+    background: linear-gradient(45deg, var(--hoverBlue), var(--blue));
+    transform: scale(1.05);
+}
+button:active {
+    transform: scale(1);
+}
+.loading {
+    display: none;
+    font-size: 20px;
+    margin-top: 20px;
+    color: var(--loadingGreen);
+    animation: blink 1s infinite alternate;
+}
+
+/* NUMBER PLATE CREATOR ALERT */
+.npc-alert {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: rgba(30, 30, 30, 0.95);
+  color: var(--info);
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(30px) scale(0.95);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  z-index: 10001;
+}
+
+.npc-alert.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.npc-alert.show::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--info), var(--backgroundLeft), var(--info));
+  mask:
+    linear-gradient(var(--info) 0 0) content-box,
+    linear-gradient(var(--info) 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  animation: glow 2s linear infinite;
+}
+
+/* FOOTER */
+footer {
+    color: var(--planeWhite);
+    text-align: center;
+    padding: 5px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid var(--planeWhite);
+}
+
+.foot {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#copyright {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: var(--info);
+}
+
+/* KEYFRAMES */
+@keyframes glow {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>UnionMods Downloader</title>
+    <script src="misc.js"></script>
+</head>
+<body>
+    <div class="container">
+        <img src="web/umd.png" alt="UnionMods Logo" class="logo">
+        <p>Paste the URL below and click Download to start the process:</p>
+        
+        <div class="input-container">
+            <input type="text" id="urlInput" placeholder="https://unionmods.com/?API=FileDownload&fileID=...&token=...">
+        </div>
+        
+        <button onclick="downloadFile()">Download</button>
+        
+        <p class="loading" id="loading">Processing...</p>
+        
+        <div class="instructions">
+            <p><strong class="instructions2">Experiencing issues with downloads on the newest site of UnionMods?</strong><br>
+            We've got a solution for you! To download your file, simply navigate to the old UnionMods site. Once you're directed to the download button, right-click on it, copy the link, and paste it here. Please note, this method only works with the older site of UnionMods.</p>
+        </div>
+        <footer>
+        <div class="foot">
+            <p id="copyright">© 2025 Crip Developments. All Rights Reserved.</p>
+        </div>
+    </footer>
+    </div>
+    <div id="npc-alert" class="npc-alert"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
