@@ -9,13 +9,13 @@ function downloadFile() {
     var umURL = url.includes("unionmods.com");
 
     if (!umURL) {
-        showNPCAlert("Please enter a valid UnionMods URL.", 4000, 0, "error");
+        showNPCAlert("Please enter a valid UnionMods URL.", 4000, "error");
         loadingIndicator.style.display = 'none'; 
         return;
     }
 
     if (!token) {
-        showNPCAlert("Token is missing", 4000, 0, "error");
+        showNPCAlert("Token is missing", 4000, "error");
         loadingIndicator.style.display = 'none'; 
         return;
     } 
@@ -28,7 +28,7 @@ function downloadFile() {
     link.href = modifiedUrl;
     link.download = "file"; 
 
-    showNPCAlert("Your file is ready for download. Please ensure you're logged into UnionMods, then click the download button again to proceed.", 4000, 0, "success");
+    showNPCAlert("Your file is ready for download. Please ensure you're logged into UnionMods, then click the download button again to proceed.", 4000, "success");
 
     setTimeout(function() {
         link.click();
@@ -36,7 +36,7 @@ function downloadFile() {
     }, 1000);
 }
 
-function showNPCAlert(message = "", time = 5000, plateFocusTime = 2000, type = "info") {
+function showNPCAlert(message = "", time = 5000, type = "info") {
     const emojis = {
         info: "ℹ️",
         success: "✅",
@@ -51,7 +51,7 @@ function showNPCAlert(message = "", time = 5000, plateFocusTime = 2000, type = "
         error: "audio/UI/error.mp3"
     };
     const audio = new Audio(sounds[type] || sounds.info);
-    audio.volume = 0.4;
+    audio.volume = 0.2;
     audio.play().catch(() => {});
 
     const colours = {
@@ -65,3 +65,27 @@ function showNPCAlert(message = "", time = 5000, plateFocusTime = 2000, type = "
     e("npc-alert").classList.remove("show");
   }, time);
 }
+
+function openGuide() {
+    e("guideModal").style.display = "block";
+}
+
+function closeGuide() {
+    e("guideModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+    let modal = e("guideModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+
+function goBackHome(){
+    location.href = "index.html";
+}
+
+function goToVersion() {
+    location.href = "version.html";
+}
+

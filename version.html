@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UnionMods Downloader – Versions</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="misc.js"></script>
+  <style>
+    .version-container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: rgba(0, 0, 0, 0.35);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      backdrop-filter: blur(8px);
+      text-align: left;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: var(--planeWhite);
+    }
+    .version {
+      margin-bottom: 35px;
+    }
+    .version h2 {
+      font-size: 22px;
+      margin-bottom: 8px;
+      color: var(--blue);
+    }
+    .version p {
+      margin-bottom: 8px;
+      font-size: 16px;
+      color: var(--info);
+    }
+    .back-link {
+      display: block;
+      margin-top: 25px;
+      text-align: center;
+      color: var(--iBlue);
+      text-decoration: underline;
+      font-weight: bold;
+    }
+    .back-link:hover {
+      color: var(--iBlueHover);
+    }
+  </style>
+</head>
+<body>
+  <div class="version-container">
+    <h1>UnionMods Downloader – Version History</h1>
+    
+    <div class="version">
+      <h2>v1.0.1 – 23rd August 2025 | 12:01pm</h2>
+      <p>• Added in-app popup guide with screenshots (no more leaving the page).</p>
+      <p>• Added guide with step-by-step instructions.</p>
+      <p>• Enhanced styling for clearer input and download instructions.</p>
+      <p>• Added version history log for UMD.</p>
+    </div>
+
+    <div class="version">
+      <h2>v1.0.0 – 23rd August 2025 | 00:10am</h2>
+      <p>• Initial release of UnionMods Downloader.</p>
+      <p>• Added NPC alert system with animations.</p>
+      <p>• Support for URL input and direct download redirection.</p>
+    </div>
+
+    <a href="javascript:void(0)" onclick="goBackHome()" class="back-link">⬅ Back to Downloader</a>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
