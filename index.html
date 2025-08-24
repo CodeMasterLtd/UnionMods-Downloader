@@ -4,76 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>UnionMods Downloader</title>
+    <title>UnionMods Downloader - Maintenance</title>
     <script src="misc.js"></script>
 </head>
 <body>
     <div class="container">
-        <img src="web/umd.png" alt="UnionMods Logo" class="logo">
-        <p>Paste the URL below and click Download to start the process:</p>
-        
-        <div class="input-container">
-            <input type="text" id="urlInput" placeholder="https://unionmods.com/?API=FileDownload&fileID=...&token=...">
-        </div>
-        
-        <button class="dButton" onclick="downloadFile()">Download</button>
-        
-        <p class="loading" id="loading">Processing...</p>
-        
-        <div class="instructions">
+        <img src="web/umd.png" alt="UnionMods Downloader Logo" class="logo">
+
+        <h1>🚧 Site Under Maintenance</h1>
         <p>
-            <strong class="instructions2">
-                Experiencing issues with downloads on the newest site of UnionMods?
-                <button class="info-link" onclick="openGuide()">View step-by-step guide</button>
-            </strong><br>
-            We've got a solution for you! Please note, this method only works with the older site of <a href="https://old.unionmods.com/home" target="_blank" rel="noopener noreferrer" class="um-link">UnionMods</a>.
+            The UnionMods Downloader is currently offline while we review 
+            compliance with Union Mods’ Terms of Service.
         </p>
-    </div>
+        <p>
+            We appreciate your patience and understanding. Please check back later 
+            for updates.
+        </p>
+
+        <div class="status-box">
+            <p><strong>Status:</strong> Offline</p>
+            <p><strong>Last Update:</strong> August 2025</p>
+        </div>
 
         <footer>
             <div class="foot">
-                <p id="copyright">© 2025 Crip Developments. All Rights Reserved.</p>
-                    <p class="version-label">
-                        Current Version: <a href="javascript:void(0)" onclick="goToVersion()" class="version-link">v1.0.1</a>
-                    </p>
+                <p id="copyright">
+                    © 2025 <a href="https://discord.com/invite/ZDCGZCguBW" target="_blank" rel="noopener noreferrer" class="cd-link">Crip Developments</a>. All Rights Reserved.
+                </p>
+                <p class="version-label">
+                    Current Version: <a href="javascript:void(0)" onclick="goToVersion()" class="version-link">v1.0.1</a>
+                </p>
             </div>
         </footer>
     </div>
-
-    <div id="guideModal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeGuide()">&times;</span>
-        <h2>How to Get the UnionMods Download URL</h2>
-        
-        <div class="step">
-        <h3>Step 1 – Go to the Old UnionMods Site</h3>
-        <p>Visit the old version of <a href="https://old.unionmods.com/home" target="_blank" rel="noopener noreferrer" class="um-link">UnionMods</a> and find the file you want to download.</p>
-        <img src="img/guide/Guide1.png" alt="UnionMods old site homepage">
-        </div>
-        
-        <div class="step">
-        <h3>Step 2 – Click the Download Button</h3>
-        <p>On the file’s page, click the <strong>Download</strong> button. This will redirect you to the <strong>Skip The Wait</strong> page.</p>
-        <img src="img/guide/Guide2.png" alt="Download button on UnionMods">
-        </div>
-        
-        <div class="step">
-        <h3>Step 3 – Skip the Wait</h3>
-        <p>Once on the Skip The Wait page, wait for the <strong>Download Now</strong> button to appear.</p>
-        <img src="img/guide/Guide3.png" alt="Skip The Wait page">
-        </div>
-        
-        <div class="step">
-        <h3>Step 4 – Copy the Final Link</h3>
-        <p>Right-click on the final <strong>Download Now</strong> button, select <em>Copy Link</em>, and paste it into the downloader tool.</p>
-        <img src="img/guide/Guide4.png" alt="Final download button with right-click menu">
-        </div>
-    <p>If you are redirected to the UnionMods login page after clicking the Download button, simply return to the UnionMods Downloader and click Download again to continue.</p>
-    </div>
-    </div>
-
-    <div id="npc-alert" class="npc-alert"></div>
-
     <script src="script.js"></script>
 </body>
 </html>
