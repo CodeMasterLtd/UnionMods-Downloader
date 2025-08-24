@@ -94,15 +94,11 @@ function formatCustomTime(date) {
     const month = date.toLocaleString('en-GB', { month: 'long' });
     const year = date.getFullYear();
 
-    let hours = date.getHours();
+    let hours = date.getHours().toString().padStart(2, '0');
     let minutes = date.getMinutes().toString().padStart(2, '0');
 
-    const ampm = hours >= 12 ? "pm" : "am";
-    hours = hours % 12;
-    hours = hours ? hours : 12; 
-
-    return `${day} ${month} ${year} | ${hours}:${minutes}${ampm}`;
-}
+    return `${day} ${month} ${year} | ${hours}:${minutes}`;
+  }
 
   const lastUpdateEl = document.getElementById("lastUpdate");
   const now = new Date();
@@ -113,15 +109,12 @@ function formatCustomTime(date) {
     const diffHours = (now - storedTime) / (1000 * 60 * 60);
 
     if (diffHours < 4) {
-
-        lastUpdateEl.textContent = formatCustomTime(storedTime);
+      lastUpdateEl.textContent = formatCustomTime(storedTime);
     } else {
-
-        lastUpdateEl.textContent = " Just Now";
+      lastUpdateEl.textContent = " Just Now";
       localStorage.setItem("lastUpdateData", JSON.stringify({ time: now }));
     }
   } else {
-
     lastUpdateEl.textContent = " Just Now";
     localStorage.setItem("lastUpdateData", JSON.stringify({ time: now }));
   }
