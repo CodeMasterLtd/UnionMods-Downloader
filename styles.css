@@ -206,22 +206,12 @@ input:focus {
   from { transform: translateY(-20px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
-
-/* VERSION */
-.version-label {
-  font-size: 14px;
-  margin-top: 5px;
-  color: var(--info);
-}
-
-.version-link {
-  color: var(--planeWhite);
-  text-decoration: underline;
-  font-weight: bold;
-}
-
-.version-link:hover {
-  color: var(--iBlueHover);
+.UMD {
+  background-color: var(--backgroundLeft);
+  border-radius: 10px;
+  padding: 10px 0;
+  box-shadow: inset 0 0 5px var(--planeWhite);
+  margin-bottom: 10px;
 }
 
 /* NUMBER PLATE CREATOR ALERT */
@@ -310,19 +300,7 @@ footer {
     }
 }
 
-.status-box {
-  border-radius: 10px;
-  padding: 10px;
-  padding-top: 30px;
-  margin-bottom: 20px;
-  animation: blinkStatus 2s linear infinite;
-}
-
-@keyframes blinkStatus {
-    100%, 0% {
-        box-shadow: inset 0 0 10px rgb(255, 170, 0);
-    }
-    50% {
-        box-shadow: inset 0 0 5px rgba(255, 0, 0, 0.5);
-    }
+h1 {
+  margin-bottom: 10px;
+  text-decoration: underline;
 }

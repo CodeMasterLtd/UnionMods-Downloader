@@ -84,37 +84,3 @@ window.onclick = function(event) {
 function goBackHome(){
     location.href = "index.html";
 }
-
-function goToVersion() {
-    location.href = "version.html";
-}
-
-function formatCustomTime(date) {
-    const day = date.getDate();
-    const month = date.toLocaleString('en-GB', { month: 'long' });
-    const year = date.getFullYear();
-
-    let hours = date.getHours().toString().padStart(2, '0');
-    let minutes = date.getMinutes().toString().padStart(2, '0');
-
-    return `${day} ${month} ${year} | ${hours}:${minutes}`;
-  }
-
-  const lastUpdateEl = document.getElementById("lastUpdate");
-  const now = new Date();
-  const storedData = JSON.parse(localStorage.getItem("lastUpdateData"));
-
-  if (storedData) {
-    const storedTime = new Date(storedData.time);
-    const diffHours = (now - storedTime) / (1000 * 60 * 60);
-
-    if (diffHours < 4) {
-      lastUpdateEl.textContent = formatCustomTime(storedTime);
-    } else {
-      lastUpdateEl.textContent = " Just Now";
-      localStorage.setItem("lastUpdateData", JSON.stringify({ time: now }));
-    }
-  } else {
-    lastUpdateEl.textContent = " Just Now";
-    localStorage.setItem("lastUpdateData", JSON.stringify({ time: now }));
-  }
